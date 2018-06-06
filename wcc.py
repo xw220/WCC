@@ -39,16 +39,6 @@ if __name__ == '__main__':
             results = wcclib.wcc(ip, username, pwd, cmds, brand)
             mac_frequency.update(ruijie.wcc_decode(results))
 
-    #For debug
-#    result_split = results.split(b'\n')
-#   for line in result_split:
-#        if not b'/' in line or b'ap name' in line or b'Status' in line:
-#            continue
-#        else:
-#            print(line)
-#    for mac in mac_frequency:
-#        print(mac,'\t',mac_frequency[mac])
-
     cur_path = os.path.dirname(__file__) 
     with open(cur_path+'/wcc_result.json','r') as f:
         wcc_result = json.load(f)

@@ -17,7 +17,6 @@ def wcc(ip, username, pwd, cmds, brand):
             res = ssh_shell.sendall(m+'\n')
             time.sleep(float(1))
             result_this = ssh_shell.recv(102400)
-            print(result_this)
             results = results + result_this
             while 1:
                 if brand == 'cisco':
@@ -28,7 +27,6 @@ def wcc(ip, username, pwd, cmds, brand):
                     res = ssh_shell.sendall(cmd_nextpage)
                     time.sleep(float(1))
                     result_this = ssh_shell.recv(102400)
-                    print(result_this)
                     results = results + result_this
                 else:
                     break
